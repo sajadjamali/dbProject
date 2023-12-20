@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Vazir';
+    src: url('./fonts/Vazir.eot') format('eot');
+    src: url('./fonts/Vazir.ttf') format('ttf');
+    src: url('./fonts/Vazir.woff') format('woff');
+}
+
+* {
+    font-family: 'Vazir';
+}
+
+#serchBox{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+table,
+th,
+td {
+    border: 2px solid yellow;
+    border-collapse: "collapse";
+}
+
+th {
+    color: blue;
+    background-color: green;
+}
+
+td,
+th {
+    padding: 10px;
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(182, 65, 166);
+}
+
+td:hover {
+    scale: 1.05;
+    cursor: pointer;
+    color: red;
+    background-color: aqua;
+}
+
+#caption {
+    animation: caption 1.5s;
+    animation-fill-mode: forwards;
+}
+
+#header {
+    animation: header 1s;
+    animation-fill-mode: forwards;
+}
+
+#text {
+    animation: text 3s linear infinite;
+}
+
+table {
+    animation: table 1.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes table {
+    from {
+        left: -44px;
+    }
+
+    to {
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%, 0%);
+    }
+}
+
+@keyframes header {
+    from {
+        margin-top: -44px;
+    }
+
+    to {
+        margin-top: 0;
+    }
+}
+
+@keyframes caption {
+    from {
+        opacity: 0;
+        left: 25%;
+    }
+
+    to {
+        opacity: 1;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%, 10%);
+    }
+}
+
+@keyframes text {
+    10% {
+        color: yellow;
+    }
+
+    20% {
+        color: rgb(27, 27, 0, 0)
+    }
+
+    30% {
+        color: blue;
+    }
+
+    40% {
+        color: red
+    }
+
+    50% {
+        color: rgb(230, 10, 46);
+    }
+
+    60% {
+        color: rgb(255, 0, 98)
+    }
+
+    70% {
+        color: rgb(0, 47, 255)
+    }
+
+    80% {
+        color: rgb(6, 134, 38);
+    }
+
+    100% {
+        color: rgb(255, 0, 242)
+    }
+}
