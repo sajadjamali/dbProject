@@ -62,6 +62,56 @@ const endPoints = [
   }
 ]
 
+const sortEndPoints = [
+  {
+    endPoint: '/booksS',
+    table: 'Book',
+    sortItem: "BookName",
+    sortType : "ASC"
+  },
+  {
+    endPoint: '/booksN',
+    table: 'Book',
+    sortItem: "BookName",
+    sortType : "DESC"
+  },
+  {
+    endPoint: '/authorsS',
+    table: 'Author',
+    sortItem: "FirstName",
+    sortType : "ASC"
+  },
+  {
+    endPoint: '/authorsN',
+    table: 'Author',
+    sortItem: "FirstName",
+    sortType : "DESC"
+  },
+  {
+    endPoint: '/membersS',
+    table: 'Member',
+    sortItem: "FirstName",
+    sortType : "ASC"
+  },
+  {
+    endPoint: '/membersN',
+    table: 'Member',
+    sortItem: "FirstName",
+    sortType : "DESC"
+  },
+]
+
+for (let i = 0; i < sortEndPoints.length; i++) {
+  app.get(sortEndPoints[i].endPoint, (req, res) => {
+    pool.query(`SELECT * FROM ${sortEndPoints[i].table} ORDER BY ${sortEndPoints[i].sortItem} ${sortEndPoints[i].sortType}`, (error, results) => {
+      if (error) {
+        return res.status(500).json({ error: 'Error connecting to the database' });
+      }
+      res.json(results);
+    });
+  });
+}
+
 for (let i = 0; i < endPoints.length; i++) {
   app.get(endPoints[i].endPoint, (req, res) => {
     pool.query(`SELECT * FROM ${endPoints[i].table}`, (error, results) => {

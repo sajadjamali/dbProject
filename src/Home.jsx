@@ -2,6 +2,7 @@ import Particle from "./components/Particle";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Carousel from "./components/Carousel";
+import Accordions from "./components/Accordions";
 import "./styles/home.css";
 
 const Home = () => {
@@ -24,6 +25,7 @@ const Home = () => {
         </div>
       </section>
       <Carousel />
+      <Accordions/>
       <Footer />
       <Particle />
     </div>
